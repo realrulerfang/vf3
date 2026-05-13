@@ -17,53 +17,67 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Логотипы сверху (над главной надписью) */
-    .top-logos {
+    /* Блок сверху с текстом и логотипами */
+    .top-section {
       position: absolute;
       top: 5%;
       left: 50%;
       transform: translateX(-50%);
+      text-align: center;
+      z-index: 20;
+    }
+
+    .trade-text {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .top-logos {
       display: flex;
       align-items: center;
-      gap: 18px;
-      z-index: 20;
+      justify-content: center;
+      gap: 20px;
     }
 
     .top-logos img {
       width: 78px;
       height: 78px;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+      box-shadow: 0 0 22px rgba(255, 215, 0, 0.85);
       transition: all 0.2s;
     }
 
     .top-logos img:hover {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
-    /* Основная надпись */
+    /* Главная надпись */
     .header {
       position: absolute;
-      top: 14%;
+      top: 13.5%;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       z-index: 10;
     }
 
     .icon {
-      width: 110px;
-      height: 110px;
+      width: 115px;
+      height: 115px;
       border-radius: 50%;
       box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
     }
 
     .logo {
-      width: 920px;
+      width: 960px;           /* Большой размер как на оригинале */
       height: auto;
-      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.6));
+      filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.7));
     }
 
     .downloading {
@@ -74,7 +88,7 @@
       color: white;
       font-size: 28px;
       font-weight: bold;
-      text-shadow: 3px 3px 6px #000;
+      text-shadow: 3px 3px 8px #000;
       letter-spacing: 3px;
       z-index: 10;
     }
@@ -116,17 +130,20 @@
 </head>
 <body>
 
-  <!-- Логотипы сверху над главной надписью -->
-  <div class="top-logos">
-    <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
-      <img src="https://basedbot.app/logo.png" alt="BasedBot">
-    </a>
-    <a href="https://o1.exchange/base/detail/0x980c0970d3b36f09454637161d796fb0022a21d7e76e8e4975bbb9d2932e5392?ca=0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
-      <img src="https://o1.exchange/o1-logo.svg" alt="O1 Exchange">
-    </a>
+  <!-- Блок сверху -->
+  <div class="top-section">
+    <div class="trade-text">trade $CoP on:</div>
+    <div class="top-logos">
+      <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+        <img src="https://basedbot.app/logo.png" alt="BasedBot">
+      </a>
+      <a href="https://o1.exchange/base/detail/0x980c0970d3b36f09454637161d796fb0022a21d7e76e8e4975bbb9d2932e5392?ca=0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+        <img src="https://o1.exchange/o1-logo.svg" alt="O1 Exchange">
+      </a>
+    </div>
   </div>
 
-  <!-- Основная надпись Clash of Perps -->
+  <!-- Главная надпись -->
   <div class="header">
     <img src="https://clashofperps.fun/icons/icon.jpg" class="icon" alt="Icon">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
