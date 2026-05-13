@@ -16,12 +16,62 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    .logo {
+    .top-logos {
       position: absolute;
-      top: 12%;
+      top: 6%;
       left: 50%;
       transform: translateX(-50%);
-      width: 620px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 15;
+    }
+
+    .top-logos img {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      transition: transform 0.2s;
+    }
+
+    .top-logos img:hover {
+      transform: scale(1.1);
+    }
+
+    .header {
+      position: absolute;
+      top: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      z-index: 10;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+    }
+
+    .logo {
+      width: 780px;
+      height: auto;
+    }
+
+    .downloading {
+      position: absolute;
+      bottom: 26%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      letter-spacing: 2px;
       z-index: 10;
     }
 
@@ -58,24 +108,25 @@
       text-shadow: 3px 3px 6px #000;
       z-index: 10;
     }
-
-    .downloading {
-      position: absolute;
-      bottom: 26%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px #000;
-      letter-spacing: 2px;
-      z-index: 10;
-    }
   </style>
 </head>
 <body>
 
-  <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
+  <!-- Новые топ-логотипы -->
+  <div class="top-logos">
+    <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+      <img src="https://basedbot.app/logo.png" alt="BasedBot">
+    </a>
+    <a href="https://o1.exchange/base/detail/0x980c0970d3b36f09454637161d796fb0022a21d7e76e8e4975bbb9d2932e5392?ca=0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+      <img src="https://pbs.twimg.com/profile_images/2010294212177371136/kWzvlDOx_400x400.png" alt="O1 Exchange">
+    </a>
+  </div>
+
+  <!-- Основной заголовок Clash of Perps -->
+  <div class="header">
+    <img src="https://clashofperps.fun/icons/icon.jpg" class="icon" alt="Icon">
+    <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
+  </div>
 
   <div class="downloading">DOWNLOADING GAME</div>
 
