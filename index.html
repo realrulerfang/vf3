@@ -17,7 +17,7 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Верхний блок */
+    /* ====================== ДЕСКТОП ====================== */
     .top-section {
       position: absolute;
       top: 4.5%;
@@ -34,12 +34,6 @@
       margin-bottom: 6px;
       letter-spacing: 1.5px;
     }
-    .top-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 22px;
-    }
     .top-logos img {
       width: 82px;
       height: 82px;
@@ -47,21 +41,14 @@
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
     }
 
-    /* Логотип игры */
-    .header {
-      position: absolute;
-      top: 11.5%;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-    }
-    .logo {
+    .header .logo {
       width: 1020px;
+      max-width: 90vw;
       height: auto;
       filter: drop-shadow(6px 10px 15px rgba(0,0,0,0.65));
     }
 
-    /* Меч + Информация */
+    /* Левый верхний угол */
     .player-info {
       position: absolute;
       top: 25px;
@@ -81,7 +68,6 @@
       flex-direction: column;
       align-items: flex-start;
     }
-
     .mc-value-top {
       color: #fff;
       font-size: 17px;
@@ -89,7 +75,6 @@
       text-shadow: 2px 2px 4px #000;
       margin-bottom: 4px;
     }
-
     .mc-bar {
       width: 210px;
       height: 22px;
@@ -116,7 +101,6 @@
       font-size: 14px;
       text-shadow: 1px 1px 3px #000;
     }
-
     .mc-value-bottom {
       color: #fff;
       font-size: 18px;
@@ -144,6 +128,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 580px;
+      max-width: 90vw;
       height: 42px;
       background: rgba(0, 0, 0, 0.75);
       border: 6px solid #ffcc00;
@@ -169,6 +154,83 @@
       text-shadow: 3px 3px 6px #000;
       z-index: 10;
     }
+
+    /* ====================== МОБИЛЬНАЯ ВЕРСИЯ ====================== */
+    @media (max-width: 768px) {
+      body {
+        background-position: center 62%;
+      }
+
+      .top-section {
+        top: 3%;
+      }
+      .trade-text {
+        font-size: 16px;
+      }
+      .top-logos img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .header {
+        top: 12%;
+      }
+      .header .logo {
+        width: 85vw;
+      }
+
+      /* Левый верхний угол */
+      .player-info {
+        top: 15px;
+        left: 15px;
+        gap: 8px;
+      }
+      .sword {
+        width: 48px;
+      }
+      .mc-bar {
+        width: 165px;
+        height: 19px;
+      }
+      .mc-value-top {
+        font-size: 15px;
+      }
+      .mc-value-bottom {
+        font-size: 16px;
+      }
+      .mc-label {
+        font-size: 12.5px;
+      }
+
+      /* Нижняя часть */
+      .downloading {
+        font-size: 22px;
+        bottom: 29%;
+      }
+
+      .progress-container {
+        width: 92vw;
+        height: 36px;
+        bottom: 19%;
+      }
+      .percent {
+        font-size: 28px;
+        bottom: 11%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .player-info {
+        top: 12px;
+        left: 12px;
+      }
+      .sword {
+        width: 45px;
+      }
+      .mc-bar {
+        width: 150px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -185,23 +247,21 @@
     </div>
   </div>
 
-  <!-- Логотип игры -->
+  <!-- Логотип -->
   <div class="header">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
   </div>
 
-  <!-- Меч + Информация -->
+  <!-- Меч + Инфо -->
   <div class="player-info">
     <img src="https://clashofperps.fun/icons/icon.jpg" class="sword" alt="Sword">
 
     <div class="mc-container">
       <div class="mc-value-top">$CoP</div>
-      
       <div class="mc-bar">
         <div class="mc-progress"></div>
         <div class="mc-label">M.C</div>
       </div>
-      
       <div class="mc-value-bottom">$38.2K</div>
     </div>
   </div>
