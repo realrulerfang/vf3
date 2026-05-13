@@ -17,46 +17,34 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Маленькая иконка сверху слева */
-    .floating-icon {
-      position: absolute;
-      top: 7%;
-      left: 8%;
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
-      z-index: 20;
-      border: 3px solid #ffcc00;
-    }
-
-    /* Логотипы дексов сверху справа */
+    /* Логотипы сверху (над главной надписью) */
     .top-logos {
       position: absolute;
       top: 5%;
-      right: 5%;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
-      gap: 12px;
-      z-index: 15;
+      gap: 18px;
+      z-index: 20;
     }
 
     .top-logos img {
-      width: 68px;
-      height: 68px;
+      width: 78px;
+      height: 78px;
       border-radius: 50%;
-      box-shadow: 0 0 18px rgba(255, 215, 0, 0.7);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
       transition: all 0.2s;
     }
 
     .top-logos img:hover {
-      transform: scale(1.12);
+      transform: scale(1.1);
     }
 
-    /* Главная надпись — увеличена и лучше отцентрирована */
+    /* Основная надпись */
     .header {
       position: absolute;
-      top: 11%;
+      top: 14%;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -73,7 +61,7 @@
     }
 
     .logo {
-      width: 920px;        /* Значительно увеличено */
+      width: 920px;
       height: auto;
       filter: drop-shadow(0 8px 15px rgba(0,0,0,0.6));
     }
@@ -128,20 +116,17 @@
 </head>
 <body>
 
-  <!-- Маленькая иконка сверху -->
-  <img src="https://clashofperps.fun/icons/icon.jpg" class="floating-icon" alt="Token">
-
-  <!-- Логотипы дексов -->
+  <!-- Логотипы сверху над главной надписью -->
   <div class="top-logos">
     <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
       <img src="https://basedbot.app/logo.png" alt="BasedBot">
     </a>
     <a href="https://o1.exchange/base/detail/0x980c0970d3b36f09454637161d796fb0022a21d7e76e8e4975bbb9d2932e5392?ca=0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
-      <img src="https://pbs.twimg.com/profile_images/2010294212177371136/kWzvlDOx_400x400.png" alt="O1 Exchange">
+      <img src="https://o1.exchange/o1-logo.svg" alt="O1 Exchange">
     </a>
   </div>
 
-  <!-- Основная надпись -->
+  <!-- Основная надпись Clash of Perps -->
   <div class="header">
     <img src="https://clashofperps.fun/icons/icon.jpg" class="icon" alt="Icon">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
