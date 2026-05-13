@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash of Perps</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #0a0a1f 0%, #1a0033 100%);
+      color: white;
+      font-family: 'Arial Black', 'Arial', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 58px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-shadow: 
+        0 0 20px #ff00ff,
+        0 0 40px #00ffff,
+        0 0 60px #ff00ff;
+      letter-spacing: 6px;
+      animation: glow 2s infinite alternate;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin-bottom: 50px;
+      opacity: 0.95;
+      letter-spacing: 2px;
+    }
+
+    .progress-container {
+      width: 480px;
+      height: 32px;
+      background: #111;
+      border: 4px solid #00ffff;
+      border-radius: 30px;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      box-shadow: 0 0 25px #00ffff;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+      transition: width 0.4s linear;
+      box-shadow: 0 0 20px #ff00ff;
+    }
+
+    .status {
+      font-size: 20px;
+      margin-top: 20px;
+      min-height: 30px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff; }
+      to { text-shadow: 0 0 30px #ff00ff, 0 0 60px #00ffff, 0 0 80px #ff00ff; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">CLASH OF PERPS</div>
+    <div class="subtitle">ЗАГРУЗКА МИРА...</div>
+    
+    <div class="progress-container">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+    
+    <div class="status" id="status">Инициализация сервера...</div>
+  </div>
+
+  <script>
+    let progress = 0;
+    const progressBar = document.getElementById('progress');
+    const statusText = document.getElementById('status');
+
+    const messages = [
+      "Инициализация сервера...",
+      "Загрузка персонажей...",
+      "Синхронизация блокчейна...",
+      "Генерация перпов...",
+      "Подготовка боевой системы...",
+      "Почти готово..."
+    ];
+
+    let msgIndex = 0;
+
+    const interval = setInterval(() => {
+      progress += Math.random() * 14 + 4;
+      if (progress > 100) progress = 100;
+
+      progressBar.style.width = progress + "%";
+      statusText.textContent = messages[msgIndex];
+
+      if (progress >= 25 && msgIndex === 0) msgIndex = 1;
+      if (progress >= 45 && msgIndex === 1) msgIndex = 2;
+      if (progress >= 65 && msgIndex === 2) msgIndex = 3;
+      if (progress >= 80 && msgIndex === 3) msgIndex = 4;
+      if (progress >= 95 && msgIndex === 4) msgIndex = 5;
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        statusText.textContent = "✅ Загрузка завершена!";
+      }
+    }, 110);
+  </script>
+</body>
+</html>
