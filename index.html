@@ -7,10 +7,10 @@
   <link rel="icon" href="https://clashofperps.fun/icons/icon.jpg">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+   
     body {
       height: 100vh;
-      background: #4a9eff url('https://clashofperps.fun/splash-bg.png') center bottom no-repeat;
+      background: #4a9eff url('https://clashofperps.fun/splash-bg.png') center 58% no-repeat;
       background-size: cover;
       overflow: hidden;
       position: relative;
@@ -26,7 +26,6 @@
       text-align: center;
       z-index: 20;
     }
-
     .trade-text {
       color: #ffffff;
       font-size: 21px;
@@ -35,14 +34,12 @@
       margin-bottom: 6px;
       letter-spacing: 1.5px;
     }
-
     .top-logos {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 22px;
     }
-
     .top-logos img {
       width: 82px;
       height: 82px;
@@ -50,12 +47,11 @@
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
       transition: all 0.2s;
     }
-
     .top-logos img:hover {
       transform: scale(1.1);
     }
 
-    /* Главная надпись — как на оригинале */
+    /* Главная надпись */
     .header {
       position: absolute;
       top: 11.5%;
@@ -63,7 +59,6 @@
       transform: translateX(-50%);
       z-index: 10;
     }
-
     .logo {
       width: 1020px;
       height: auto;
@@ -97,14 +92,12 @@
       box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
       z-index: 10;
     }
-
     .progress-bar {
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #ffeb3b, #ff9800, #ffeb3b);
       transition: width 0.3s linear;
     }
-
     .percent {
       position: absolute;
       bottom: 8.5%;
@@ -119,7 +112,6 @@
   </style>
 </head>
 <body>
-
   <!-- Блок сверху -->
   <div class="top-section">
     <div class="trade-text">trade $CoP on:</div>
@@ -139,25 +131,22 @@
   </div>
 
   <div class="downloading">DOWNLOADING GAME</div>
-
+  
   <div class="progress-container">
     <div class="progress-bar" id="bar"></div>
   </div>
-
+  
   <div class="percent" id="percent">0%</div>
 
   <script>
     let progress = 0;
     const bar = document.getElementById('bar');
     const percentText = document.getElementById('percent');
-
     const interval = setInterval(() => {
       progress += Math.random() * 12 + 5;
       if (progress > 100) progress = 100;
-
       bar.style.width = progress + "%";
       percentText.textContent = Math.floor(progress) + "%";
-
       if (progress >= 100) {
         clearInterval(interval);
         percentText.textContent = "100%";
