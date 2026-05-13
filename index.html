@@ -17,7 +17,7 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
-    /* Левый верхний угол - Меч */
+    /* Левый верхний угол */
     .player-info {
       position: absolute;
       top: 25px;
@@ -43,6 +43,14 @@
       font-weight: bold;
       text-shadow: 2px 2px 4px #000;
       margin-bottom: 4px;
+    }
+    .contract-address {
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px #000;
+      margin-bottom: 4px;
+      opacity: 0.95;
     }
     .mc-bar {
       width: 210px;
@@ -93,7 +101,7 @@
       filter: drop-shadow(6px 10px 15px rgba(0,0,0,0.65));
     }
 
-    /* Торговля сверху по центру */
+    /* Торговля сверху */
     .top-section {
       position: absolute;
       top: 4.5%;
@@ -164,25 +172,17 @@
       z-index: 10;
     }
 
-    /* ====================== МОБИЛЬНАЯ АДАПТАЦИЯ ====================== */
+    /* Мобильная адаптация */
     @media (max-width: 768px) {
-      .player-info {
-        top: 15px;
-        left: 15px;
-        gap: 8px;
-      }
+      .player-info { top: 15px; left: 15px; gap: 8px; }
       .sword { width: 48px; }
       .mc-bar { width: 165px; height: 19px; }
-      .mc-value-top { font-size: 15px; }
-      .mc-value-bottom { font-size: 16px; }
-
+      .contract-address { font-size: 12px; }
       .header { top: 13%; }
       .logo { width: 85vw; }
-
       .top-section { top: 3%; }
       .trade-text { font-size: 16px; }
       .top-logos img { width: 60px; height: 60px; }
-
       .downloading { font-size: 22px; bottom: 29%; }
       .progress-container { width: 92vw; height: 36px; bottom: 19%; }
       .percent { font-size: 28px; bottom: 11%; }
@@ -190,12 +190,13 @@
   </style>
 </head>
 <body>
-  <!-- Меч + $CoP слева сверху -->
+  <!-- Меч + Информация слева -->
   <div class="player-info">
     <img src="https://clashofperps.fun/icons/icon.jpg" class="sword" alt="Sword">
 
     <div class="mc-container">
       <div class="mc-value-top">$CoP</div>
+      <div class="contract-address">0xd8Db4C337d09Da8d7ceb7d87ADFE224D17785ba3</div>
       <div class="mc-bar">
         <div class="mc-progress"></div>
         <div class="mc-label">M.C</div>
@@ -204,20 +205,20 @@
     </div>
   </div>
 
-  <!-- Торговля сверху по центру -->
+  <!-- Торговля сверху -->
   <div class="top-section">
     <div class="trade-text">trade $CoP on:</div>
     <div class="top-logos">
-      <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+      <a href="https://basedbot.app/token/base/0xd8Db4C337d09Da8d7ceb7d87ADFE224D17785ba3" target="_blank">
         <img src="https://basedbot.app/logo.png" alt="BasedBot">
       </a>
-      <a href="https://o1.exchange/base/detail/0x980c0970d3b36f09454637161d796fb0022a21d7e76e8e4975bbb9d2932e5392?ca=0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
+      <a href="https://o1.exchange/base/detail/0xd8Db4C337d09Da8d7ceb7d87ADFE224D17785ba3" target="_blank">
         <img src="https://o1.exchange/o1-logo.svg" alt="O1 Exchange">
       </a>
     </div>
   </div>
 
-  <!-- Логотип по центру -->
+  <!-- Логотип -->
   <div class="header">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
   </div>
