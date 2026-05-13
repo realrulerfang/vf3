@@ -85,14 +85,14 @@
       height: 22px;
       background: rgba(0, 0, 0, 0.75);
       border: 3px solid #ffcc00;
-      border-radius: 20px;
+      border-radius: 999px;
       overflow: hidden;
       position: relative;
     }
     .mc-progress {
       width: 50%;
       height: 100%;
-      background: linear-gradient(90deg, #ffeb3b, #ff9800);
+      background: linear-gradient(90deg, #ffeb3b, #ffb300);
       box-shadow: 0 0 10px #ffeb3b;
     }
     .mc-label {
@@ -103,13 +103,6 @@
       color: white;
       font-weight: bold;
       font-size: 14px;
-      text-shadow: 1px 1px 3px #000;
-    }
-    .sword-name {
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 3px;
       text-shadow: 1px 1px 3px #000;
     }
     .mc-value {
@@ -190,12 +183,11 @@
     <img src="https://clashofperps.fun/icons/icon.jpg" class="sword" alt="Sword">
 
     <div class="mc-container">
-      <div class="sword-name">Sword</div>
       <div class="mc-bar">
         <div class="mc-progress"></div>
         <div class="mc-label">M.C</div>
       </div>
-      <div class="mc-value">$38.2K</div>
+      <div class="mc-value">$CoP</div>
     </div>
   </div>
 
@@ -208,4 +200,19 @@
   <div class="percent" id="percent">0%</div>
 
   <script>
-   
+    let progress = 0;
+    const bar = document.getElementById('bar');
+    const percentText = document.getElementById('percent');
+    const interval = setInterval(() => {
+      progress += Math.random() * 12 + 5;
+      if (progress > 100) progress = 100;
+      bar.style.width = progress + "%";
+      percentText.textContent = Math.floor(progress) + "%";
+      if (progress >= 100) {
+        clearInterval(interval);
+        percentText.textContent = "100%";
+      }
+    }, 80);
+  </script>
+</body>
+</html>
