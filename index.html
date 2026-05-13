@@ -68,21 +68,22 @@
       left: 35px;
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       z-index: 25;
     }
     .sword {
-      width: 95px;
-      filter: drop-shadow(0 8px 12px rgba(0,0,0,0.6));
+      width: 58px;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
     }
 
-    .mc-bar-container {
-      margin-top: 8px;
+    .mc-container {
+      display: flex;
+      flex-direction: column;
     }
     .mc-bar {
-      width: 220px;
-      height: 26px;
-      background: rgba(0, 0, 0, 0.7);
+      width: 210px;
+      height: 22px;
+      background: rgba(0, 0, 0, 0.75);
       border: 3px solid #ffcc00;
       border-radius: 20px;
       overflow: hidden;
@@ -92,23 +93,28 @@
       width: 50%;
       height: 100%;
       background: linear-gradient(90deg, #ffeb3b, #ff9800);
-      box-shadow: 0 0 12px #ffeb3b;
+      box-shadow: 0 0 10px #ffeb3b;
     }
     .mc-label {
       position: absolute;
-      right: 10px;
+      right: 8px;
       top: 50%;
       transform: translateY(-50%);
       color: white;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 14px;
       text-shadow: 1px 1px 3px #000;
-      z-index: 2;
+    }
+    .sword-name {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 3px;
+      text-shadow: 1px 1px 3px #000;
     }
     .mc-value {
-      margin-top: 4px;
       color: #fff;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: bold;
       text-shadow: 2px 2px 4px #000;
     }
@@ -174,21 +180,20 @@
     </div>
   </div>
 
-  <!-- Логотип Clash of Perps -->
+  <!-- Логотип игры -->
   <div class="header">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
   </div>
 
   <!-- Меч + Шкала -->
   <div class="player-info">
-    <img src="https://clashofperps.fun/sword.png" class="sword" alt="Sword">
+    <img src="https://clashofperps.fun/icons/icon.jpg" class="sword" alt="Sword">
 
-    <div>
-      <div class="mc-bar-container">
-        <div class="mc-bar">
-          <div class="mc-progress"></div>
-          <div class="mc-label">M.C</div>
-        </div>
+    <div class="mc-container">
+      <div class="sword-name">Sword</div>
+      <div class="mc-bar">
+        <div class="mc-progress"></div>
+        <div class="mc-label">M.C</div>
       </div>
       <div class="mc-value">$38.2K</div>
     </div>
@@ -203,19 +208,4 @@
   <div class="percent" id="percent">0%</div>
 
   <script>
-    let progress = 0;
-    const bar = document.getElementById('bar');
-    const percentText = document.getElementById('percent');
-    const interval = setInterval(() => {
-      progress += Math.random() * 12 + 5;
-      if (progress > 100) progress = 100;
-      bar.style.width = progress + "%";
-      percentText.textContent = Math.floor(progress) + "%";
-      if (progress >= 100) {
-        clearInterval(interval);
-        percentText.textContent = "100%";
-      }
-    }, 80);
-  </script>
-</body>
-</html>
+   
