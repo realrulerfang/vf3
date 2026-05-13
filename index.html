@@ -5,77 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clash of Perps</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       height: 100vh;
-      background: #4a9eff url('https://i.imgur.com/8zKzZfJ.png') center bottom no-repeat; /* замени на реальную ссылку */
+      background: #4a9eff url('https://clashofperps.fun/splash-bg.png') center bottom no-repeat;
       background-size: cover;
-      font-family: system-ui, sans-serif;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
     }
+
     .logo {
       position: absolute;
-      top: 15%;
-      font-size: 82px;
-      color: #ffcc00;
-      text-shadow: 4px 4px 0 #000, -4px -4px 0 #000;
-      font-weight: 900;
-      letter-spacing: 2px;
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 620px;
+      z-index: 10;
     }
+
     .progress-container {
       position: absolute;
       bottom: 18%;
+      left: 50%;
+      transform: translateX(-50%);
       width: 560px;
-      height: 42px;
-      background: #1a1a1a;
+      height: 38px;
+      background: rgba(0, 0, 0, 0.7);
       border: 5px solid #ffcc00;
       border-radius: 50px;
       overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+      z-index: 10;
     }
+
     .progress-bar {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, #ffd000, #ff8c00);
-      transition: width 0.25s;
+      background: linear-gradient(90deg, #ffeb3b, #ff9800, #ffeb3b);
+      transition: width 0.25s linear;
     }
+
     .percent {
       position: absolute;
-      bottom: 10%;
-      font-size: 28px;
+      bottom: 9%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      font-weight: bold;
       color: white;
-      text-shadow: 2px 2px 4px black;
+      text-shadow: 3px 3px 6px #000;
+      z-index: 10;
+    }
+
+    .downloading {
+      position: absolute;
+      bottom: 26%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      letter-spacing: 2px;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
 
-  <div class="logo">Clash of Perps</div>
+  <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
+
+  <div class="downloading">DOWNLOADING GAME</div>
 
   <div class="progress-container">
     <div class="progress-bar" id="bar"></div>
   </div>
+
   <div class="percent" id="percent">0%</div>
 
   <script>
-    let p = 0;
+    let progress = 0;
     const bar = document.getElementById('bar');
-    const percent = document.getElementById('percent');
+    const percentText = document.getElementById('percent');
 
-    const int = setInterval(() => {
-      p += Math.random() * 12 + 5;
-      if (p > 100) p = 100;
-      bar.style.width = p + '%';
-      percent.textContent = Math.floor(p) + '%';
+    const interval = setInterval(() => {
+      progress += Math.random() * 11 + 6;
+      if (progress > 100) progress = 100;
 
-      if (p >= 100) {
-        clearInterval(int);
-        percent.textContent = "100%";
+      bar.style.width = progress + "%";
+      percentText.textContent = Math.floor(progress) + "%";
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        percentText.textContent = "100%";
       }
-    }, 90);
+    }, 85);
   </script>
 </body>
 </html>
