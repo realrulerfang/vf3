@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clash of Perps</title>
+  <link rel="icon" href="https://clashofperps.fun/icons/icon.jpg">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -16,50 +17,65 @@
       font-family: system-ui, -apple-system, sans-serif;
     }
 
+    /* Маленькая иконка сверху слева */
+    .floating-icon {
+      position: absolute;
+      top: 7%;
+      left: 8%;
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+      z-index: 20;
+      border: 3px solid #ffcc00;
+    }
+
+    /* Логотипы дексов сверху справа */
     .top-logos {
       position: absolute;
-      top: 6%;
-      left: 50%;
-      transform: translateX(-50%);
+      top: 5%;
+      right: 5%;
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       z-index: 15;
     }
 
     .top-logos img {
-      width: 85px;
-      height: 85px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-      transition: transform 0.2s;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.7);
+      transition: all 0.2s;
     }
 
     .top-logos img:hover {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
+    /* Главная надпись — увеличена и лучше отцентрирована */
     .header {
       position: absolute;
-      top: 14%;
+      top: 11%;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 20px;
       z-index: 10;
     }
 
     .icon {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
     }
 
     .logo {
-      width: 780px;
+      width: 920px;        /* Значительно увеличено */
       height: auto;
+      filter: drop-shadow(0 8px 15px rgba(0,0,0,0.6));
     }
 
     .downloading {
@@ -68,25 +84,25 @@
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: bold;
-      text-shadow: 2px 2px 5px #000;
-      letter-spacing: 2px;
+      text-shadow: 3px 3px 6px #000;
+      letter-spacing: 3px;
       z-index: 10;
     }
 
     .progress-container {
       position: absolute;
-      bottom: 18%;
+      bottom: 17.5%;
       left: 50%;
       transform: translateX(-50%);
-      width: 560px;
-      height: 38px;
-      background: rgba(0, 0, 0, 0.7);
-      border: 5px solid #ffcc00;
+      width: 580px;
+      height: 42px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 6px solid #ffcc00;
       border-radius: 50px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
       z-index: 10;
     }
 
@@ -94,15 +110,15 @@
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #ffeb3b, #ff9800, #ffeb3b);
-      transition: width 0.25s linear;
+      transition: width 0.3s linear;
     }
 
     .percent {
       position: absolute;
-      bottom: 9%;
+      bottom: 8.5%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 32px;
+      font-size: 34px;
       font-weight: bold;
       color: white;
       text-shadow: 3px 3px 6px #000;
@@ -112,7 +128,10 @@
 </head>
 <body>
 
-  <!-- Новые топ-логотипы -->
+  <!-- Маленькая иконка сверху -->
+  <img src="https://clashofperps.fun/icons/icon.jpg" class="floating-icon" alt="Token">
+
+  <!-- Логотипы дексов -->
   <div class="top-logos">
     <a href="https://basedbot.app/token/base/0x77a92f265bb58a3eec23f8c6157cb14f99fe7b07" target="_blank">
       <img src="https://basedbot.app/logo.png" alt="BasedBot">
@@ -122,7 +141,7 @@
     </a>
   </div>
 
-  <!-- Основной заголовок Clash of Perps -->
+  <!-- Основная надпись -->
   <div class="header">
     <img src="https://clashofperps.fun/icons/icon.jpg" class="icon" alt="Icon">
     <img src="https://clashofperps.fun/splash-logo.png?v=splash-art" class="logo" alt="Clash of Perps">
@@ -142,7 +161,7 @@
     const percentText = document.getElementById('percent');
 
     const interval = setInterval(() => {
-      progress += Math.random() * 11 + 6;
+      progress += Math.random() * 12 + 5;
       if (progress > 100) progress = 100;
 
       bar.style.width = progress + "%";
@@ -152,7 +171,7 @@
         clearInterval(interval);
         percentText.textContent = "100%";
       }
-    }, 85);
+    }, 80);
   </script>
 </body>
 </html>
